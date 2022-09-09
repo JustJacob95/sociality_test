@@ -1,0 +1,117 @@
+.brand-menu{
+  background: #393d42;
+  flex-grow: 1;
+  ul{
+    list-style: none;
+    margin: 0;
+    .children-brand-menu{
+      padding-left: 35px !important;
+      list-style: none;
+      li{
+        text-transform: none;
+        margin-bottom: 24px;
+        padding-left: 35px;
+        display: flex;
+        align-items: center;
+        &.active{
+          color: #F55661;
+          &::before{
+            color: #F55661;
+          }
+        }
+        &::before {
+          content: "•";
+          font-weight: bold;
+          display: inline-block;
+          width: 15px;
+          margin-left: -30px;
+          font-size: 25px;
+          margin-right: 16px;
+        }
+      }
+    }
+    li{
+      cursor: pointer;
+      font-size: 14px;
+      text-transform: uppercase;
+      .toggle-opened{
+        width: 20px;
+        height: 100%;
+        text-align: right;
+        font-size: 18px;
+      }
+      .notifications{
+        border: 1px solid #73D9C7;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+      color:#D8D8D8;
+      ul{
+        display: none;
+      }
+      &>div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding-right: 15px;
+        &>div{
+          align-items: center;
+          flex-grow: 1;
+          a{
+            height: 50px;
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+          }
+          img, svg{
+            margin-right: 12px;
+            .changeColorMenuIcon{
+              fill: #F55661
+            }
+          }
+        }
+      }
+      &.opened{
+        background: #F55661;
+        ul{
+          display: block;
+          padding: 15px !important;
+          background: #252525;
+        }
+        img, svg{
+          margin-right: 12px;
+          .changeColorMenuIcon{
+            fill: white
+          }
+        }
+      }
+    }
+  }
+}
+
+.sceleton-loading-brand-menu-item{
+  padding: 10px 15px;
+  div{
+    height: 30px !important;
+    width: 100%;
+    border-radius: 12px;
+    animation: skeleton-loading 1s linear infinite alternate;
+    filter: brightness(40%);
+  }
+
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
